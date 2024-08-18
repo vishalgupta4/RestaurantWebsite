@@ -54,8 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// vg.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const dateElement = document.createElement("div");
   dateElement.className = "date_time";
@@ -79,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateDateTime, 1000);
 });
 
-// vg.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll(".grid-image, .feature img");
   const textContainer = document.createElement("div");
@@ -93,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
       textContainer.textContent = text;
       textContainer.style.display = "block";
 
-      /
       setTimeout(() => {
         textContainer.style.display = "none";
       }, 3000);
