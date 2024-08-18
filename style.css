@@ -1,4 +1,4 @@
-/* Basic Reset and Global Styles */
+
 body,
 h1,
 h2,
@@ -33,7 +33,7 @@ header .date_time {
   padding: 10px;
 }
 
-/* Header and Navigation */
+
 header {
   background-color: #ed85e3;
   padding: 15px 0;
@@ -62,7 +62,7 @@ nav img {
 nav i {
   font-size: 24px;
   cursor: pointer;
-  display: none; /* Display on small screens only */
+  display: none; 
 }
 
 .nav_links {
@@ -83,14 +83,13 @@ nav i {
   transition: color 0.3s ease-in-out;
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 40px 0;
   flex-wrap: wrap;
-  position: relative; /* For animation */
+  position: relative;
 }
 
 .hero img {
@@ -147,7 +146,7 @@ nav i {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeIn 1s ease-in; /* Animation */
+  animation: fadeIn 1s ease-in; 
 }
 
 .feature img {
@@ -179,7 +178,7 @@ nav i {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
-  display: none; /* Hidden by default */
+  display: none;
   z-index: 1000;
   font-size: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -202,7 +201,7 @@ nav i {
   transform: scale(1.05);
 }
 
-/* Footer Section */
+
 footer {
   background-color: #f7f7f7;
   padding: 30px 0;
@@ -251,7 +250,7 @@ footer img {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav_links {
-    display: none; /* Hide on smaller screens */
+    display: none; 
   }
 
   nav i {
