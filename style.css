@@ -1,14 +1,29 @@
 /* Basic Reset and Global Styles */
-body, h1, h2, h3, p, ul {
+body,
+h1,
+h2,
+h3,
+p,
+ul {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   line-height: 1.6;
   color: #333;
-  background-color: #f4f4f4;
+  background-color: #edd7e9;
+}
+header .date_time {
+  top: 15px;
+  right: 15px;
+  font-size: 14px;
+  color: #333;
+  background: #97508a;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -20,8 +35,17 @@ body {
 
 /* Header and Navigation */
 header {
-  background-color: #fff;
+  background-color: #ed85e3;
   padding: 15px 0;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #7b4576;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,7 +78,9 @@ nav i {
 }
 
 .nav_links a:hover {
-  color: #ff5733;
+  color: #f6f0ef;
+  font-size: 20px;
+  transition: color 0.3s ease-in-out;
 }
 
 /* Hero Section */
@@ -64,11 +90,13 @@ nav i {
   align-items: center;
   margin: 40px 0;
   flex-wrap: wrap;
+  position: relative; /* For animation */
 }
 
 .hero img {
   max-width: 45%;
   border-radius: 8px;
+  animation: zoomIn 1s ease-out;
 }
 
 .hero_content {
@@ -79,6 +107,7 @@ nav i {
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero p {
@@ -93,14 +122,17 @@ nav i {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease, transform 0.4s ease;
 }
 
 .explore_btn:hover {
-  background-color: #e04e2f;
+  background-color: #87e02f;
+  width: 180px;
+  height: 50px;
+  border-radius: 10%;
+  transform: scale(1.1);
 }
 
-/* Features Section */
 .features {
   display: flex;
   justify-content: space-around;
@@ -111,10 +143,11 @@ nav i {
 .feature {
   text-align: center;
   padding: 15px;
-  background-color: #fff;
+  background-color: #f4d1e7;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-in; /* Animation */
 }
 
 .feature img {
@@ -124,6 +157,7 @@ nav i {
 
 .feature:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Menu Section */
@@ -137,6 +171,19 @@ nav i {
   margin-bottom: 30px;
   color: #333;
 }
+.text_overlay {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .grid {
   display: grid;
@@ -146,6 +193,7 @@ nav i {
 
 .grid img {
   width: 100%;
+  height: 300px;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
@@ -207,7 +255,7 @@ footer img {
   }
 
   nav i {
-    display: block; /* Show hamburger menu on small screens */
+    display: block;
   }
 
   .hero {
@@ -232,5 +280,39 @@ footer img {
   footer {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
