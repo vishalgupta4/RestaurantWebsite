@@ -1,245 +1,232 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-
-* {
+/* Basic Reset and Global Styles */
+body, h1, h2, h3, p, ul {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  line-height: 1.5;
-  font-weight: 300;
+  line-height: 1.6;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
 }
 
-button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  background-color: #ff6b6b;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-button:hover {
-  background-color: #ff4b4b;
+/* Header and Navigation */
+header {
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  background: #fff;
-  padding: 15px 20px;
-  z-index: 50;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+nav img {
+  height: 50px;
 }
 
+nav i {
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Display on small screens only */
+}
+
+.nav_links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav_links a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.nav_links a:hover {
+  color: #ff5733;
+}
+
+/* Hero Section */
 .hero {
   display: flex;
-  gap: 50px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-  border-radius: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.hero img {
+  max-width: 45%;
+  border-radius: 8px;
 }
 
 .hero_content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  max-width: 50%;
+  padding: 20px;
 }
 
-.tag {
-  background-color: #ff6b6b;
-  padding: 8px 15px;
-  color: white;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.hero_content h1 {
-  font-size: 64px;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+.hero p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
 }
 
 .explore_btn {
-  background: #ff6b6b;
-  align-self: flex-start;
+  background-color: #ff5733;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.explore_btn:hover {
+  background-color: #e04e2f;
+}
+
+/* Features Section */
 .features {
-  margin: 80px 0;
   display: flex;
-  gap: 20px;
   justify-content: space-around;
+  margin: 50px 0;
+  flex-wrap: wrap;
 }
 
 .feature {
-  display: flex;
-  gap: 15px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .feature img {
-  width: 60px;
+  max-width: 60px;
+  margin-bottom: 15px;
 }
 
 .feature:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.divider {
-  border: none;
-  height: 2px;
-  background: linear-gradient(to right, #ff9a9e, #fecfef);
-  margin: 40px 0;
-}
-
+/* Menu Section */
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  align-items: center;
+  text-align: center;
+  margin: 60px 0;
 }
 
-.menu .tag {
-  background-color: #ff6b6b;
-  padding: 8px 15px;
-  color: white;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  align-self: center;
-}
-
-.grid-image {
-  border-radius: 15px;
-  transition: 0.3s;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.grid-image:hover {
-  transform: scale(1.05);
+.menu h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .grid {
   display: grid;
-  gap: 15px;
-  grid-template-areas:
-    "I1 I1 I2 I3"
-    "I1 I1 I2 I7"
-    "I4 I5 I6 I7";
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
 }
 
+.grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer Section */
 footer {
-  background-color: #2b2b2b;
-  color: #fff;
-  padding: 40px 0;
+  background-color: #f7f7f7;
+  padding: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
-.link_lists,
-.news_letter {
-  color: #ccc;
+footer img {
+  height: 40px;
 }
 
-.link_lists h3,
-.news_letter h3 {
+.link_lists {
+  margin: 20px 0;
+}
+
+.link_lists h3 {
   margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 500;
+  color: #666;
 }
 
 .link_lists ul {
   list-style: none;
 }
 
-.link_lists li,
-.news_letter input {
-  margin-bottom: 10px;
-  font-size: 16px;
+.link_lists ul li {
+  margin-bottom: 8px;
 }
 
 .news_letter input {
-  padding: 10px 15px;
-  border-radius: 25px;
-  border: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
 }
 
 .icon_container {
   display: flex;
   gap: 15px;
-  font-size: 32px;
+  font-size: 24px;
 }
 
-.icon_container i {
-  color: #ff6b6b;
-  transition: 0.3s;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav_links {
+    display: none; /* Hide on smaller screens */
+  }
 
-.icon_container i:hover {
-  color: #ff4b4b;
-}
+  nav i {
+    display: block; /* Show hamburger menu on small screens */
+  }
 
-@media (max-width: 786px) {
   .hero {
     flex-direction: column;
-    gap: 20px;
-    padding: 30px 20px;
+    text-align: center;
   }
 
-  .hero_image img {
-    width: 80%;
-  }
-
-  .hero_content {
-    gap: 10px;
-    padding: 0 20px;
-  }
-
-  .hero_content h1 {
-    font-size: 40px;
+  .hero img {
+    max-width: 80%;
+    margin-bottom: 20px;
   }
 
   .features {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
   .grid {
-    padding: 10px;
-  }
-
-  .grid-image {
-    border-radius: 10px;
+    grid-template-columns: 1fr;
   }
 
   footer {
